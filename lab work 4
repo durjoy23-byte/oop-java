@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+class Person {
+    String sname;
+    int age;
+
+    
+    Person(String s, int ag) {
+        sname = s;
+        age = ag;
+    }
+
+   
+    void display() {
+        System.out.println("Name is: " + sname + ", Age is: " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+       
+        Scanner scanner = new Scanner(System.in);
+
+       
+        System.out.println("Enter the number of persons:");
+        int n = scanner.nextInt();
+        scanner.nextLine();  
+
+        
+        Person[] person = new Person[n];
+
+        
+        for (int i = 0; i < n; i++) {
+            System.out.println("Enter the name of person " + (i + 1) + ":");
+            String name = scanner.nextLine();
+
+            System.out.println("Enter the age of person " + (i + 1) + ":");
+            int age = scanner.nextInt();
+            scanner.nextLine();  
+
+           
+            person[i] = new Person(name, age);
+        }
+
+       
+        for (int i = 0; i < n; i++) {
+            person[i].display();
+        }
+
+       
+        scanner.close();
+    }
+}
